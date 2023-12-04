@@ -126,13 +126,11 @@ int main()
 		}
 		int lineLength = line.size();
 		infile.clear();
-		infile.seekg(0);
+		infile.seekg(0, ios::beg);
 		string fileString;
-		fileString.reserve(infile.tellg());
-		infile.seekg(0, std::ios::beg);
 
-		fileString.assign((std::istreambuf_iterator<char>(infile)),
-						  std::istreambuf_iterator<char>());
+		fileString.assign((istreambuf_iterator<char>(infile)),
+						  istreambuf_iterator<char>());
 
 		fileString.erase(remove(fileString.begin(), fileString.end(), '\n'), fileString.cend());
 
