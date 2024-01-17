@@ -33,4 +33,4 @@
 *.out
 *.app
 
-*input.txt
+*/input.txt
